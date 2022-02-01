@@ -1,8 +1,8 @@
-var age = document.getElementById('age');
-var height = document.getElementById('height');
-var weight = document.getElementById('weight');
-var female = document.getElementById('f');
-var male = document.getElementById('m');
+let age = document.getElementById('age');
+let height = document.getElementById('height');
+let weight = document.getElementById('weight');
+let female = document.getElementById('f');
+let male = document.getElementById('m');
 
 document.getElementById('submit').addEventListener('click', validadeForm);
 
@@ -23,18 +23,18 @@ function validadeForm() {
 }
 
 function calculateIMC() {
-  var arrayPerson = [age.value, height.value, weight.value];
+  const arrayPerson = [age.value, height.value, weight.value];
   if (male.checked) {
     arrayPerson.push('male');
   } else if (female.checked) {
     arrayPerson.push('female');
   }
 
-  var imc =
+  const imc =
     Number(arrayPerson[2]) /
     (((Number(arrayPerson[1]) / 100) * Number(arrayPerson[1])) / 100);
 
-  var result = '';
+  let result = '';
   if (imc < 18.5) {
     result = 'Magreza';
   } else if (18.5 <= imc && imc <= 24.9) {
@@ -45,12 +45,12 @@ function calculateIMC() {
     result = 'Obesidade';
   }
 
-  var h1 = document.createElement('h1');
-  var h2 = document.createElement('h2');
+  const h1 = document.createElement('h1');
+  const h2 = document.createElement('h2');
 
-  var t = document.createTextNode(result);
-  var b = document.createTextNode('IMC: ');
-  var r = document.createTextNode(parseFloat(imc).toFixed(2) + ' kg/m²');
+  const t = document.createTextNode(result);
+  const b = document.createTextNode('IMC: ');
+  const r = document.createTextNode(parseFloat(imc).toFixed(2) + ' kg/m²');
 
   h1.appendChild(t);
   h2.appendChild(b);
